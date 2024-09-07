@@ -11,6 +11,7 @@ import Message from "../messages/model/message-model";
 
 @Table
 class User extends Model {
+  
   @Unique
   @Column
   declare userName: string;

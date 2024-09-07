@@ -2,6 +2,10 @@ import dotenv from "dotenv";
 import { NodeEnvironment } from "../utils/types";
 import { Sequelize } from "sequelize-typescript";
 import { setting } from "../config/db";
+import User from "../users/user-model";
+import Token from "../token/model/token-model";
+import Message from "../messages/model/message-model";
+import Followers from "../following/model/follower-model";
 
 
 
@@ -19,7 +23,10 @@ const connString = `${config.dialect}://${config.username}:${config.password}@${
 
 const sequelize = new Sequelize(connString, {
   models: [
-
+User,
+Token,
+Message,
+Followers
   ],
 });
 
